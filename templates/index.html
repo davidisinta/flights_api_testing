@@ -6,24 +6,23 @@
 </head>
 <body>
 
-{% if flight_data %}
-    <div>
-        <h2>Flight Data:</h2>
-        <ul>
-            {% for flight in flight_data %}
-                <li>
-                    Source Airport: {{ flight.sourceAirportCode }}<br>
-                    Destination Airport: {{ flight.destinationAirportCode }}<br>
-                    Price: {{ flight.price }}<br>
-                    Departure Time: {{ flight.departureTime }}<br>
-                    Arrival Time: {{ flight.arrivalTime }}<br>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-{% else %}
-    <p>No flight data available.</p>
-{% endif %}
+<form action="/" method="post" class="form-example">
+  <div class="form-example">
+    <label for="iteneraryType">itenerary type: </label>
+    <input type="text" name="itineraryType" id="itineraryType" required />
+  </div>
+  <div class="form-example">
+    <label for="date">Date: </label>
+    <input type="text" name="date" id="date" required />
+  </div>
+
+
+
+  <div class="form-example">
+    <input type="submit" value="Submit" />
+  </div>
+</form>
+
 
 </body>
 </html>

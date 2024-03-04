@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Details</title>
+</head>
+<body>
+    <h1>Flight Details</h1>
+    {% if response_json.status %}
+        <p>Message: {{ response_json.message }}</p>
+        <ul>
+            {% for flight in response_json.data.flights %}
+                <li>
+                    <ul>{{flight }}</ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No flights found.</p>
+    {% endif %}
+</body>
+</html>
